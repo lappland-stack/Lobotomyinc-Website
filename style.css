@@ -19,7 +19,7 @@ body {
 	 }
 
 nav { 
-	text-align: centre;
+	text-align: center;
 
 	margin-bottom: 40px;
 }
@@ -30,7 +30,7 @@ nav a {
 
 	text-decoration: none;
 
-	padding; 15px;
+	padding: 15px;
 
 	font-size: 1.3em;
 
@@ -57,7 +57,7 @@ img {
 	
 	position: fixed;
 	bottom: 20px;
-	right: 20px:
+	right: 20px;
 	text-align: center;
 }
 .record { 
@@ -66,7 +66,7 @@ img {
 
 	border-radius: 50%;
 
-	backgound-image: url("InkribbonREmake.webp")
+	background-image: url("InkribbonREmake.webp");
 	background-size: cover;
 
 	margin-bottom: 10px;
@@ -88,5 +88,5 @@ img {
 
 .spinning {
 
-   animations: spin 3s linear infinite;
+   animation: spin 3s linear infinite;
 }
