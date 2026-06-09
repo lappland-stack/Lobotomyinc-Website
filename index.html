@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-
-	<title>Lobotomy Inc.</title>
+<head>	<title>Lobotomy Inc.</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,37 +13,7 @@
 	<a href="#research">Research</a>
 </nav>
 
-<script>
 
-const music = document.getElementById("music");
-
-const button = document.getElementById("playbutton");
-
-const record = document.getElementById("record");
-
-button.addEventListener("click", () => {
-
-if (music.paused) {
-
-	music.play();
-
-	button.textContent = "⏸ Pause";
-
-	record.classList.add("spinning");
-
-  	} else {
-	
-	music.pause();
-
-	button.textContent = "▶ Play";
-
-	record.classList.remove("spinning");
-
-   }
-
-});
-
-</script>
 <div class="content">
 	<h1>Lobotomy Inc.</h1>
 
@@ -61,7 +29,7 @@ if (music.paused) {
 	
 	<button id="playButton">▶ Play</button>
 
-	<audio controls>
+	<audio id="music">
 		<source src="Resident Evil 2 Save Room.mp3" type="audio/mpeg">
 	</audio>
 </div>
@@ -167,5 +135,41 @@ if (music.paused) {
 
 
 </div>
+
+<script>
+
+const music = document.getElementById("music");
+
+const button = document.getElementById("playbutton");
+
+const record = document.getElementById("record");
+
+button.addEventListener("click", () => {
+
+if (music.paused) {
+
+        music.play();
+
+        button.textContent = "⏸ Pause";
+
+        record.classList.add("spinning");
+
+        } else {
+
+        music.pause();
+
+        button.textContent = "▶ Play";
+
+        record.classList.remove("spinning");
+
+   }
+
+});
+
+</script>
+
+
+
+
 </body>
 </html>
