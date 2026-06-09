@@ -6,6 +6,46 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<nav>
+	<a href="#about">About</a>
+	<a href="#hardware">Hardware</a>
+	<a href="#photography">Photography</a>
+	<a href="#art">Art</a>
+	<a href="#thoughts">Thoughts</a>
+	<a href="#research">Research</a>
+</nav>
+
+<script>
+
+const music = document.getElementById("music");
+
+const button = document.getElementById("playbutton");
+
+const record = document.getElementById("record");
+
+button.addEventListener("click", () => {
+
+if (music.paused) {
+
+	music.play();
+
+	button.textContent = "⏸ Pause";
+
+	record.classList.add("spinning");
+
+  	} else {
+	
+	music.pause();
+
+	button.textContent = "▶ Play";
+
+	record.classList.remove("spinning");
+
+   }
+
+});
+
+</script>
 <div class="content">
 	<h1>Lobotomy Inc.</h1>
 
@@ -15,21 +55,25 @@
 	<h2>Now Playing</h2>
 	<p>Resident Evil 2 Save Room Theme<p>
 
+<div class="music-player">
+	
+	<div id="record" class="record"></div>
+	
+	<button id="playButton">▶ Play</button>
+
 	<audio controls>
 		<source src="Resident Evil 2 Save Room.mp3" type="audio/mpeg">
 	</audio>
-	
-	<details>
+</div>
 
-	<summary>About Me</summary>
+	<h2 id="about">About Me</h2>
 	<p>So, it would be stupid to say my name so instead I'll say a nickname, Morsey, as i often use morse code for my online name which itself has a looong story tied to it, but i am 19 at the time of making this, i have been in IT for 4~ years as of 2026, and this is in fact my fist time with html and so far it seems fairly easy but it might just be a matter of experience ?</p>
 	<p>Anyway I'm doing this as therapy, cuz a guy will learn html and get a camera from 2009 before he talks to someone about his issues, ah and the camera I'll cover in the hardware section ,I added it cuz i felt like it, its my website is it not?</p>
 	<p>Well, I hope I'll live long enough to see this grow exponentially and that you get to enjoy your stay here, whoever you may be and however long that stay may last.</p>
 
-	</details>
 
-	<details>
-	<summary>Hardware</summary>
+	
+	<h2 id="hardware">Hardware</h2>
 	<p>This is where i cover what hardware i may want to share and any thoughts i have on it</p>
 	
 		<details>
@@ -40,22 +84,23 @@
 		<img src="fujifilm_S1730.jpg" alt="FujiFilm S1730" title="Not my picture but a web one">
 		</details>
 	
-	</details>
 
-	<details>
-	<summary>Photography</summary>
+	<h2 id="photography">Photography</h2>
 	<p>Any photo i deem fit to be here for one reason or another</p>
 
 		<details>
 		<h3>Random Photo</h3>
 		<p>Basically i was listening to some song, forgot the title tbh, but eh you can choose whatever song you think fits, and i was walkin, as one does, and it was pretty late, really quiet night, like way toooo quiet, shit was scary man and i decided to look up a bit and saw this, there were the branches of a tree after winter, and spring, and both sides showed, you had the death of the leafless branches but also life coming back to them, while encompassing the the street lamp, and it had this odd sort of RE2 save room music vibe, and i decided fug it, lets take a pic and get home to edit this bih, and i did, and it came out pretty well, my second ever edited pic tbh, so im quite proud of it too bad the actual camera is dead, i think it would have made it 20x better, but oh well.</p>
-
+		
+		<figure>
 		<img src="28-04.jpeg">
+		<figcaption>
+			Some place in Cumbernauld, Scotland, late evening, April 2026
+		</figcaption>
+		</figure>
 		</details>	
-	</details>
 
-	<details>
-	<summary>Art</summary>
+	<h2 id="art">Art</h2>
 	<p>Any art i make, yeah thats it, its pretty self explanatory dude</p>
 
 		<details>
@@ -65,26 +110,30 @@
 		<p>Ignoring all that shit up above, this is based on my AC, of which i forgot the name off and lost the save file long ago, but at the time of april 2025 i loved it, i still do, its a light and nymble AC, with reverse legs and all, i didnt draw its weapons cuz this sort of half body already took me 4 hours on a random summer night and i was fucking tiered dude, i didnt eve colour it and shit.</p>
 		<p>But i do hope you like it.</p>
 
+		<figure>
 		<img src="AC.jpg" alt="Armored Core Drawing by yours truly">
+		<figcaption>
+			Drawing of a Nachterer type AC
+		</figcaption>
+		</figure>
 		</details>
 
-	</details>
 
-	<details>
-	<summary>Thoughts</summary>
+	<h2 id="thoughts">Thoughts</h2>
 	<p>Since its my corner of the internet I'll drop just about anything that is messing with me to some extent</p>
 
 	<p>This section will be the most erratic tbh, like no obvious function or like actual titles and shit, maybe ill put this in a hidden tab or some shit so its not as central to the overall website<p>
-	</details>
 
-	<details>
-	<summary>Research</summary>
+
+	<h2 id="research">Research</h2>
 	<p>Anything i decide to hyperfixate on and write about really</p>
 	 
 
 		<details>
 		<summary>Kenopsia and its ties to grief, and liminality</summary>
-			
+		
+		<p>Reading time: 10 minutes</p>
+		<p>Written: June 2026</p>	
 		<p>SO TO PREFACE ALL THIS, this is an informal paper, there are some book names and statistics used, but i didnt faact check them much, and i wont either, but you are not getting a deep and fulfilling and full of data and research sort of article, youre getting someones feelings and educated opinion on this, but mostly feelings, kenopsia is a feeling after all, so its only fitting its explained by someone pouring their own feelings into this</p>
 
 		
@@ -115,7 +164,7 @@
 
 
 		</details>
-	</details>
+
 
 </div>
 </body>

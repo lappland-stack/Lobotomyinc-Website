@@ -18,6 +18,27 @@ body {
 	border-radius: 10px;
 	 }
 
+nav { 
+	text-align: centre;
+
+	margin-bottom: 20px;
+}
+
+nav a { 
+
+	color: #33FF33;
+
+	text-decoration: none;
+
+	padding; 10px;
+}
+
+nav a:hover {
+
+	text-shadow: 0 0 10px #33FF33;
+
+}
+
 
 h1 {
      border-bottom: 2px solid white;
@@ -27,8 +48,41 @@ img {
  	max-width: 100%;
 	height: auto;
     }
-audio {
+
+.music-player {
+	
 	position: fixed;
 	bottom: 20px;
-	right: 20px;
-      }
+	right: 20px:
+	text-align: center;
+}
+.record { 
+	width: 100px;
+	height: 100px;
+
+	border-radius: 50%;
+
+	backgound-image: url("InkribbonREmake.webp")
+	background-size: cover;
+
+	margin-bottom: 10px;
+
+	box-shadow: 0 0 15px rgba(255,255,255,0.4);
+
+}
+
+@keyframes spin {
+ 
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.spinning {
+
+   animations: spin 3s linear infinite;
+}
