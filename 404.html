@@ -12,7 +12,7 @@
 	<p> You are not meant to be here </p>
 	<p> This is a limina space </p>
 	<p> Turn back now </p>
-	<p> Go Home, <span id="name">.</p>
+	<p> Go Home, <span id="names">.</p>
 
 	<a hrex="index.html">Return Home</a>
 
@@ -33,8 +33,8 @@ const names = [
 const randomName =
 	names[Math.floor(Math.random() * names.length)];
 
-document.getElementById("name").textContent = 
+document.getElementById("names").textContent = 
 	randomName;
 
-
+</script>
 </html>
