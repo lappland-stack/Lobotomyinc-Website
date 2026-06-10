@@ -1,0 +1,40 @@
+<html>
+<head>	<title>Lobotomy Inc.</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="favicon.webp">
+</head>
+
+<body>
+	
+	<h1>404 Not Found</h1>
+
+
+	<p> You are not meant to be here </p>
+	<p> This is a limina space </p>
+	<p> Turn back now </p>
+	<p> Go Home, <span id="name">.</p>
+
+	<a hrex="index.html">Return Home</a>
+
+</body>
+<script>
+
+const names = [
+    "Jack",
+    "James",
+    "Oliver",
+    "George",
+    "Harry",
+    "Noah",
+    "Charlie",
+    "Oscar",
+    "Leo"
+];
+const randomName =
+	names[Math.floor(Math.random() * names.length)];
+
+document.getElementById("name").textContent = 
+	randomName;
+
+
+</html>
