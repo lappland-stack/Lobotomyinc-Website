@@ -55,6 +55,18 @@ img {
 	height: auto;
     }
 
+.article-audio {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #33FF33;
+    border-radius: 5px;
+}
+
+.article-audio audio {
+    width: 100%;
+}
+
+
 .music-player {
 	
 	position: fixed;
