@@ -335,7 +335,7 @@
 			<summary>The Hat Man, Shadow People, and Sleep Paralysis</summary>
 
 			<p>Reading time: 20 minutes</p>
-			<p>Written: 11 june 2026 (maybe specific days would be worth adding, i think i will add that rn)</p>
+			<p>Written: Started 11 june 2026 - finished 13 september 2026</p>
 			<p>Notes: No alcohol involvememnt this time guys sorry, we keeping it sober in this bitch</p>
 
 			<p>To introduce all this, the last essay went more into the psychology, and historical context of a lot of beliefs in the supernatural, moreover it left on the big conclusion that context is what matters most, and it defines the possibilities of a folk tale being just someone scared and tiered seeing some shit, or actually having seen some shit, and something I'll add here is that these are the stories told and written, there are 100% more that never get told, and who knows, may prove the overall existence of the supernatural, but alas im not here to prove wether ghosts exist or not, but i do believe in the supernatural and i want to look at this fairly objectively and also get my own opinions in here, after all this entire website aims to be informal and fun to actually read tbh.</p>
@@ -381,7 +381,7 @@
             <p>Speaking of sleep paralysis, its time we talk about it and tie it to the paranormal and speak about it scientifically too. To begin, Sleep paralysis is "when you cannot more or speak as you are waking up or falling asleep.", as said by the NHS website, they also add that it can be scary but is harmless and most people only experience it once or twice in their life. In terms of causes, it is said to be unclear, but is believed to have a few possible links, to insomnia, narcolepsy, PTSD, General anxiety dissorder, panic dissorder, and even a family history of sleep paralysis, but there is no clear cause, as no single or combined preexisting dissorder leads to sleep paralysis, as people with none of the above and no history of sleep paralysis can still experience it, moreover even having a balanced diet, avoiding alchol or other substances before sleep still wont 100% stop you from experiencing sleep paralysis, there are people who suffer from sleep paralysis constantly and the usual attempts at teratment is to find and treat an underlying condition that may lead to this, or beign referred to a sleep specialist and possibly even be referred to cognitive behavioural therapy (CBT).</p>
 
             <figure>
-            <img class="Sleep paralysis symptoms" src="sleepparalysis.jpg">
+            <img class="Sleep paralysis symptoms" src="sleepparalysis.jpg" width="600" height="750">
 
             <figcaption>
             A diagram of sleep paralysis symptoms
@@ -411,7 +411,7 @@
                 Your browser does not support the audio element.
             </audio>
 
-            <p id="artBellProgress">NOt started yet.</p>
+            <p id="artBellProgress">Not started yet.</p>
         </div>
 
 
@@ -460,28 +460,41 @@
 
 <script>
 const artBell = document.getElementById("artBell");
-const artBellProgress = document.getElementBYId("artBellProgress");
+const artBellProgress = document.getElementById("artBellProgress");
 
 const savedPosition = localStorage.getItem("artBellPosition");
 
-artBell.addEventListener("loadmetadata", () => {
+// Restore previous listening position
+artBell.addEventListener("loadedmetadata", () => {
     if (savedPosition) {
-        artBell.currentTime = number(savedPosition);
-        artBellProgress.textContent = 
-            'Previously listened: ${formatTIme(artBell.currentTime)}';
+        artBell.currentTime = Number(savedPosition);
+
+        artBellProgress.textContent =
+            `Previously listened: ${formatTime(artBell.currentTime)}`;
     }
 });
 
-
+// Save position every 5 seconds while listening
 artBell.addEventListener("timeupdate", () => {
-    localStorage.setItem("artBellPosition", artBell.currentTime);
-
-    artBellProgress.textContent =
-        `Current position: ${formatTime(artBell.currentTime)}`;
+    if (!artBell.paused) {
+        localStorage.setItem("artBellPosition", artBell.currentTime);
+    }
 });
 
+// Save position when paused
+artBell.addEventListener("pause", () => {
+    if (!artBell.ended) {
+        localStorage.setItem("artBellPosition", artBell.currentTime);
+
+        artBellProgress.textContent =
+            `Paused at: ${formatTime(artBell.currentTime)}`;
+    }
+});
+
+// Clear saved position when recording is finished
 artBell.addEventListener("ended", () => {
     localStorage.removeItem("artBellPosition");
+
     artBellProgress.textContent = "Finished.";
 });
 
@@ -493,15 +506,18 @@ function formatTime(seconds) {
     return `${hours}:${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
 }
 
+
+// ==============================
+// Resident Evil Save Room Music
+// ==============================
+
 const music = document.getElementById("music");
-
 const button = document.getElementById("playButton");
-
 const record = document.getElementById("record");
 
 button.addEventListener("click", () => {
 
-if (music.paused) {
+    if (music.paused) {
 
         music.play();
 
@@ -509,22 +525,22 @@ if (music.paused) {
 
         record.classList.add("spinning");
 
-        } else {
+    } else {
 
         music.pause();
 
         button.textContent = "▶ Play";
 
         record.classList.remove("spinning");
-
-   }
+    }
 
 });
-
 </script>
+
+
 <footer>
 	Lobotomy Inc. * Est. 2026
-	last update: 10/06/2026
+	last update: 13/09/2026
 </footer>
 
 
